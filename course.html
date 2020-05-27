@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>staff</title>
+
+
+    <meta charset="utf-8">
+    <!--meta info-->
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="/2.png">
+    <!--stylesheet include-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+
+<style>
+    #first {
+        width: 50%;
+        float: left;
+        height: 5%;
+        text-align: center;
+        justify-content: space-around;
+
+    }
+
+    #second {
+        width: 50%;
+        float: left;
+        height: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+        border-radius: 12;
+
+    }
+
+
+    #half {
+        width: 25%;
+        float: left;
+
+        padding-right: 5%;
+        padding-top: 5%;
+        border-radius: 12;
+
+    }
+
+    #clear {
+        clear: both;
+    }
+
+    .topnav {
+
+
+        overflow: hidden;
+        border-bottom: 0px solid white;
+    }
+
+    .topnav a {
+
+        color: white;
+        text-align: center;
+        padding: 2% 2% 2% 0%;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav div {
+
+        color: white;
+        text-align: center;
+        padding: 2% 2%;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+
+    .topnav a:hover {
+
+        color: white;
+    }
+
+    .topnav input[type=text] {
+        float: left;
+        padding: 0.5%;
+        padding-top: 1%;
+        padding-bottom: -1%;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: white;
+        background-color: black;
+        border-radius: 30px;
+        border: 1px solid white;
+        outline: none;
+
+    }
+
+
+    .text-animation input[type=text] {
+
+        padding: 0.5%;
+        padding-top: 1%;
+        padding-bottom: -1%;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: white;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid white;
+        outline: none;
+    }
+
+    .text-animation input[type=number] {
+
+        padding: 0.5%;
+
+
+        min-width: 220px;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: white;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid white;
+        outline: none;
+    }
+
+    .text-animation input[type=password] {
+
+        padding: 0.5%;
+        padding-top: 1%;
+        min-width: 220px;
+        padding-bottom: -1%;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: white;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid white;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .text-animation input[type=date] {
+
+        padding: 0.5%;
+        padding-top: 1%;
+        padding-bottom: -1%;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: white;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid white;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .text-animation input[type=email] {
+
+        padding: 0.5%;
+        padding-top: 1%;
+        padding-bottom: -1%;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: white;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid white;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .text-animation button {
+
+        padding: 2%;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        color: black;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid white;
+        outline: none;
+    }
+
+    .text-animation button:focus {
+
+        outline: none;
+    }
+
+    .footer {
+
+
+
+        overflow: hidden;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+
+
+    }
+
+    body {
+        -ms-overflow-style: none;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("background.png");
+    }
+
+    .text-animation {
+
+
+        font-family: sans-serif;
+        opacity: 0;
+        transform: translateY(5em) rotateZ(-10deg);
+        transition: transform 4s .25s cubic-bezier(0, 1, .3, 1),
+            opacity .3s .25s ease-out;
+        max-width: 600px;
+        width: 90%;
+        will-change: transform, opacity;
+    }
+
+    .text-animation.is-visible {
+        opacity: 1;
+        transform: rotateZ(0deg);
+    }
+
+    @media (max-width:360px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 80px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+        .mobile a {
+            font-size: 10px;
+        }
+
+        .mobile p {
+            font-size: 30px
+        }
+
+        .mobile #second {
+            width: 100%;
+        }
+
+        .mobile_first a {
+            font-size: 10px;
+        }
+
+        .mobile_first p {
+            font-size: 30px
+        }
+
+        .mobile_first #first {
+            width: 100%
+        }
+    }
+
+    @media (max-width:815px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+            float: left;
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 80px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+        .mobile a {
+            font-size: 10px;
+        }
+
+        .mobile p {
+            font-size: 30px
+        }
+
+        .mobile #second {
+            width: 100%;
+        }
+
+        .mobile_first a {
+            font-size: 10px;
+        }
+
+        .mobile_first p {
+            font-size: 30px
+        }
+
+        .mobile_first #first {
+            width: 100%
+        }
+    }
+
+    @media (max-width:414px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 80px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+        .mobile a {
+            font-size: 10px;
+        }
+
+        .mobile p {
+            font-size: 30px
+        }
+
+        .mobile #second {
+            width: 100%;
+        }
+
+        .mobile_first a {
+            font-size: 10px;
+        }
+
+        .mobile_first p {
+            font-size: 30px
+        }
+
+        .mobile_first #first {
+            width: 100%
+        }
+    }
+
+    @media (max-width:411px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+
+        }
+
+        .new {
+            height: 200vw;
+            font-size: small;
+        }
+
+        .new #id {
+            font-size: small;
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 80px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+        .mobile a {
+            font-size: 10px;
+        }
+
+        .mobile p {
+            font-size: 30px
+        }
+
+        .mobile #second {
+            width: 100%;
+        }
+
+        .mobile_first a {
+            font-size: 10px;
+        }
+
+        .mobile_first p {
+            font-size: 30px
+        }
+
+        .mobile_first #first {
+            width: 100%
+        }
+    }
+
+    @media (max-width:320px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 80px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+        .mobile a {
+            font-size: 10px;
+        }
+
+        .mobile p {
+            font-size: 30px
+        }
+
+        .mobile #second {
+            width: 100%;
+        }
+
+        .mobile_first a {
+            font-size: 10px;
+        }
+
+        .mobile_first p {
+            font-size: 30px
+        }
+
+        .mobile_first #first {
+            width: 100%
+        }
+    }
+
+    @media (max-width:375px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+            float: left;
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 80px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+        .mobile a {
+            font-size: 10px;
+        }
+
+        .mobile p {
+            font-size: 30px
+        }
+
+        .mobile #second {
+            width: 100%;
+        }
+
+        .mobile_first a {
+            font-size: 10px;
+        }
+
+        .mobile_first p {
+            font-size: 30px
+        }
+
+        .mobile_first #first {
+            width: 100%
+        }
+    }
+
+    @media (max-width:1192px) {
+        .topnav .mobile_view .mobile {
+            padding-left: -10%;
+
+        }
+
+        .topnav .mobile_view .mobile_search {
+            width: 100px;
+            padding-left: -2px;
+        }
+
+        .first .text-animation .show-on-scroll .mobile {
+            font-size: 30px;
+        }
+
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
+    #myDIV {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        background-color: white;
+        margin-top: 20px;
+    }
+</style>
+
+<body style="background-image:url(math.jpg); background-repeat: none;">
+    <div style="background-color: rgba(3,3,3,0.7);">
+        <div class="topnav" style="padding-left: 5%; ">
+            <img src="2.png" style="height: 100px;width: 100px;padding-top:0%;">
+            <div>
+                <a class="active" href="homemajor.html" style="padding-left:0%;">Home</a>
+                <a href="#contact" style="padding-left: 3%;">Contact</a>
+                <a href="#about" style="padding-left: 3%;">About</a>
+                <a href="#about" style="padding-left: 3%;">signup</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="background-color: rgba(3,3,3,0.4);">
+        <br><br><br>
+
+        <div style="height: 25vw;padding: 5%;">
+
+        </div>
+
+        <div style="background-color: white;height:25vw ;border-radius: 50px 50px 0 0 ;padding: 5%;padding-left: 30%;">
+
+            <p style="font-family: 'Great Vibes',cursive;font-size: 50px;float: left;">Course Name</p>
+            <p style="font-family: sans-serif;font-size: 30px;padding-left: 300px;padding-top: 15px;"> CourseName</p>
+
+
+        </div>
+
+        <div style="background-color: white; padding: 5%; padding-left: 27%;">
+
+
+
+
+            
+
+            
+
+            <form method="GET" action="#">
+                <button onclick="myFunction()">Try it</button>
+                <div id="myDIV">
+                    This is my DIV element.
+                </div>
+
+
+            </form>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div style="background-color: rgba(3,3,3,0.7); ">
+
+        <!-- Footer -->
+        <footer class="page-footer font-small cyan darken-3">
+
+            <!-- Footer Elements -->
+
+            <div style="position: relative; padding-left: 50%;">
+                <!-- Grid row-->
+                <img src="2.png" style="height: 100px;width: 100px;padding-top:0%;">
+                <!-- Grid row-->
+            </div>
+
+            <!-- Footer Elements -->
+            <div style="justify-content: space-around; display: grid;grid-template-columns: 3;">
+                <a href="#terms" style="grid-column: 1; color: white;">terms and conditions</a>
+                <a href="#privacy" style="grid-column: 2;color: white;">privacy policy</a>
+                <a href="#contact" style="grid-column: 3;color: white;">contact us</a>
+            </div>
+            <!-- for sakthivel add the footer elements -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="color: white;">© 2020 Copyright:
+
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+    </div>
+    <!-- Footer -->
+</body>
+
+<script>
+    window.addEventListener('scroll', function () {
+        console.log("Scrollin'");
+    });
+    var scroll = window.requestAnimationFrame ||
+        function (callback) {
+            window.setTimeout(callback, 1000 / 60)
+        };
+    var elementsToShow = document.querySelectorAll('.show-on-scroll');
+
+    function loop() {
+
+        elementsToShow.forEach(function (element) {
+            if (isElementInViewport(element)) {
+                element.classList.add('is-visible');
+            } else {
+                element.classList.remove('is-visible');
+            }
+        });
+
+        scroll(loop);
+    }
+    loop();
+
+    function isElementInViewport(el) {
+        // special bonus for those using jQuery
+        if (typeof jQuery === "function" && el instanceof jQuery) {
+            el = el[0];
+        }
+        var rect = el.getBoundingClientRect();
+        return (
+            (rect.top <= 0 &&
+                rect.bottom >= 0) ||
+            (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
+            (rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+        );
+    }
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</html>
